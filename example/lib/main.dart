@@ -122,7 +122,7 @@ class RecordingScreen extends StatefulWidget {
   });
 
   @override
-  _RecordingScreenState createState() => _RecordingScreenState();
+  State<RecordingScreen> createState() => _RecordingScreenState();
 }
 
 class _RecordingScreenState extends State<RecordingScreen> {

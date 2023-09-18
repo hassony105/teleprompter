@@ -18,7 +18,7 @@ class TextScrollerComponent extends StatefulWidget {
   final String fontSizeLabel;
   final String pauseLabel;
   final String playLabel;
-  final Color? color;
+  final Color color;
 
   /// The text content to be displayed and scrolled.
   final String text;
@@ -50,8 +50,8 @@ class TextScrollerComponent extends StatefulWidget {
     required this.fontSizeLabel,
     required this.pauseLabel,
     required this.playLabel,
+    required this.color,
     this.floatingButtonShape,
-    this.color,
     super.key,
   });
 

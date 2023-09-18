@@ -24,6 +24,7 @@ class TeleprompterWidget extends StatefulWidget {
     this.stopRecordingButton = const Icon(Icons.stop, color: Colors.red),
     this.floatingButtonShape,
     this.defaultOpacity = 0.7,
+    this.color = Colors.blue,
 
     super.key,
   });
@@ -35,6 +36,7 @@ class TeleprompterWidget extends StatefulWidget {
   final String fontSizeLabel;
   final String pauseLabel;
   final String playLabel;
+  final Color color;
 
   /// Text where the tele
   final String text;
@@ -108,6 +110,7 @@ class _TeleprompterWidgetState extends State<TeleprompterWidget> {
                     fontSizeLabel: widget.fontSizeLabel,
                     pauseLabel: widget.pauseLabel,
                     playLabel: widget.playLabel,
+                    color: widget.color,
                   ),
                 )
               ],

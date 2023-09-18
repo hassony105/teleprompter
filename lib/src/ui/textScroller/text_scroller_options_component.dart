@@ -12,7 +12,7 @@ import 'package:teleprompter/src/ui/timer/stopwatch_widget.dart';
 class TextScrollerOptionsComponent extends StatelessWidget {
   final int index;
   final UpdateIndexCallback? updateIndex;
-  final Color? sliderColor;
+  final Color sliderColor;
   final String savedToGallery;
   final String errorSavingToGallery;
   final String opacityLabel;
@@ -31,7 +31,7 @@ class TextScrollerOptionsComponent extends StatelessWidget {
     required this.fontSizeLabel,
     required this.pauseLabel,
     required this.playLabel,
-    this.sliderColor = Colors.blue,
+    required this.sliderColor,
     super.key,
   });
 

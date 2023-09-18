@@ -18,6 +18,7 @@ class TextScrollerComponent extends StatefulWidget {
   final String fontSizeLabel;
   final String pauseLabel;
   final String playLabel;
+  final Color? color;
 
   /// The text content to be displayed and scrolled.
   final String text;
@@ -50,6 +51,7 @@ class TextScrollerComponent extends StatefulWidget {
     required this.pauseLabel,
     required this.playLabel,
     this.floatingButtonShape,
+    this.color,
     super.key,
   });
 
@@ -139,6 +141,7 @@ class _TextScrollerComponentState extends State<TextScrollerComponent>
             fontSizeLabel: widget.fontSizeLabel,
             pauseLabel: widget.pauseLabel,
             playLabel: widget.playLabel,
+            sliderColor: widget.color,
           )
         ],
       ),

@@ -15,9 +15,9 @@ class CameraDetector {
 
   CameraController? getCameraController() => cameraController;
 
-  Future<void> selectFrontCamera() async {
+  Future<void> selectCamera([CameraLensDirection direction = CameraLensDirection.back]) async {
     for (final CameraDescription cameraDescription in cameras) {
-      if (cameraDescription.lensDirection == CameraLensDirection.front) {
+      if (cameraDescription.lensDirection == direction) {
         await onNewCameraSelected(cameraDescription);
         _cameraReady = true;
       }
@@ -27,7 +27,7 @@ class CameraDetector {
   Future<void> onNewCameraSelected(CameraDescription cameraDescription) async {
     cameraController = CameraController(
       cameraDescription,
-      ResolutionPreset.medium,
+      ResolutionPreset.veryHigh,
       imageFormatGroup: ImageFormatGroup.jpeg,
     );
 
@@ -35,8 +35,7 @@ class CameraDetector {
     cameraController!.addListener(() {
       AppLogger().debug('camera event: ${cameraController!.value}');
       if (cameraController!.value.hasError) {
-        AppLogger()
-            .debug('Camera error ${cameraController!.value.errorDescription}');
+        AppLogger().debug('Camera error ${cameraController!.value.errorDescription}');
       }
     });
 

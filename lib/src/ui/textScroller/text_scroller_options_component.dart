@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_build_context_synchronously
 
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:teleprompter/src/data/state/teleprompter_state.dart';
@@ -11,7 +12,7 @@ import 'package:teleprompter/src/ui/timer/stopwatch_widget.dart';
 class TextScrollerOptionsComponent extends StatelessWidget {
   final int index;
   final UpdateIndexCallback? updateIndex;
-  final Color sliderColor;
+  final Color? sliderColor;
   final String savedToGallery;
   final String errorSavingToGallery;
   final String opacityLabel;
@@ -101,6 +102,7 @@ class TextScrollerOptionsComponent extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 GestureDetector(
+                  // onTap: teleprompterState.toggleCamera,
                   onTap: teleprompterState.toggleStartStop,
                   child: Container(
                     height: 50,

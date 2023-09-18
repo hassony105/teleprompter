@@ -29,7 +29,7 @@ class CameraService extends CameraDetector {
     } on CameraException {
       try {
         // Try to select the front camera again
-        await selectFrontCamera();
+        await selectCamera();
         await cameraController!.startVideoRecording();
         Future.delayed(Duration.zero, () => teleprompterState.refresh());
       } on CameraException {

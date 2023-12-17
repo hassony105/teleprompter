@@ -67,7 +67,7 @@ mixin TeleprompterSettingsState {
     }
   }
 
-  double getOpacity() => min(1, max(0, _opacity));
+  double getOpacity() => min(1, max(0.25, _opacity));
 
   double getSpeedFactor() => _speedFactor;
 

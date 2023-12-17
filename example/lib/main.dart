@@ -102,11 +102,11 @@ class _HomeScreenState extends State<HomeScreen> {
             MaterialPageRoute(
               builder: (context) => TeleprompterWidget(
                 text: textEditingController.text,
-                opacityLabel: 'Opacity',
-                speedLabel: 'Speed',
-                fontSizeLabel: 'Font Size',
-                pauseLabel: 'Pause Text',
-                playLabel: 'Play Text',
+                opacityLabel: 'الشفافية',
+                speedLabel: 'السرعة',
+                fontSizeLabel: 'حجم الخط',
+                pauseLabel: 'ايقاف النص',
+                playLabel: 'تحريك النص',
               ),
             ),
           ),

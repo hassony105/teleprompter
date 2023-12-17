@@ -57,9 +57,9 @@ class TextScrollerOrientedComponent extends StatelessWidget {
               child: Text(
                 text,
                 textDirection: TextDirection.rtl,
-                textAlign: orientation == NativeDeviceOrientation.landscapeRight
-                    ? TextAlign.right
-                    : TextAlign.left,
+                // textAlign: orientation == NativeDeviceOrientation.landscapeRight
+                //     ? TextAlign.right
+                //     : TextAlign.left,
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                       color: teleprompterState.getTextColor(),
                       fontSize: teleprompterState.getTextSize(),

@@ -56,6 +56,7 @@ class TextScrollerOrientedComponent extends StatelessWidget {
               width: width,
               child: Text(
                 text,
+                textDirection: TextDirection.rtl,
                 textAlign: orientation == NativeDeviceOrientation.landscapeRight
                     ? TextAlign.right
                     : TextAlign.left,

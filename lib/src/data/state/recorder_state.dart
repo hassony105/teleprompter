@@ -1,5 +1,4 @@
 import 'package:camera/camera.dart';
-import 'package:teleprompter/src/data/services/cameraService/camera_dectector.dart';
 import 'package:teleprompter/src/data/services/camera_service.dart';
 import 'package:teleprompter/src/data/state/teleprompter_state.dart';
 

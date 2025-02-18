@@ -37,8 +37,7 @@ mixin TeleprompterSettingsState {
   double _textSize = 14;
   Color _textColor = Colors.greenAccent;
 
-  Future<void> loadSettings(
-      BuildContext context, Color defaultTextColor) async {
+  Future<void> loadSettings(BuildContext context, Color defaultTextColor) async {
     _textColor = defaultTextColor;
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 
@@ -77,9 +76,10 @@ mixin TeleprompterSettingsState {
 
   Future<void> setTextColor(Color color) async {
     _textColor = color;
+    int floatToInt8(double x) => (x * 255.0).round() & 0xff;
 
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setInt(settingsTextColor, color.value);
+    await prefs.setInt(settingsTextColor, floatToInt8(color.a) << 24 | floatToInt8(color.r) << 16 | floatToInt8(color.g) << 8 | floatToInt8(color.b) << 0);
   }
 
   double getValueForIndex(int index) {

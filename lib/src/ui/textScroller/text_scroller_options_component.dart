@@ -1,11 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_build_context_synchronously
 
-import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:teleprompter/src/data/state/teleprompter_state.dart';
 import 'package:teleprompter/src/shared/my_snack_bar.dart';
-import 'package:teleprompter/src/ui/textScroller/options/text_option_modify_component.dart';
 import 'package:teleprompter/src/ui/textScroller/options/text_option_navigator_icon_component.dart';
 import 'package:teleprompter/src/ui/timer/stopwatch_widget.dart';
 

@@ -3,10 +3,8 @@ import 'package:native_device_orientation/native_device_orientation.dart';
 import 'package:provider/provider.dart';
 import 'package:teleprompter/src/data/state/teleprompter_state.dart';
 import 'package:teleprompter/src/shared/app_logger.dart';
-import 'package:teleprompter/src/shared/my_snack_bar.dart';
 import 'package:teleprompter/src/ui/textScroller/text_scroller_options_component.dart';
 import 'package:teleprompter/src/ui/textScroller/text_scroller_oriented_component.dart';
-import 'package:teleprompter/src/ui/timer/stopwatch_widget.dart';
 
 /// This class represents the TextScrollerComponent, a StatefulWidget that provides
 /// functionality for displaying text and controlling its scrolling behavior.
@@ -69,7 +67,7 @@ class _TextScrollerComponentState extends State<TextScrollerComponent>
     final ScrollController scrollController = ScrollController(
         initialScrollOffset: teleprompterState.getScrollPosition());
     scrollController.addListener(() {
-      teleprompterState.setScrollPosition(scrollController.offset);
+      teleprompterState.setScrollPosition = scrollController.offset;
     });
     AppLogger()
         .debug('scroll controller clients: ${scrollController.hasClients}');
@@ -78,6 +76,9 @@ class _TextScrollerComponentState extends State<TextScrollerComponent>
       Future.delayed(
         const Duration(milliseconds: 500),
         () {
+          if (!scrollController.hasClients) {
+            return;
+          }
           final double maxExtent = scrollController.position.maxScrollExtent;
           final double distanceDifference = maxExtent - scrollController.offset;
           final double durationDouble =
@@ -131,7 +132,7 @@ class _TextScrollerComponentState extends State<TextScrollerComponent>
           TextScrollerOptionsComponent(
               index: teleprompterState.getOptionIndex(),
               updateIndex: (int index) {
-                teleprompterState.updateOptionIndex(index);
+                teleprompterState.updateOptionIndex = index;
                 teleprompterState.refresh();
               },
             savedToGallery: widget.savedToGallery,
